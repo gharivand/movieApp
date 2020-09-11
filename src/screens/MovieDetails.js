@@ -19,23 +19,24 @@ class MovieDetails extends Component {
                     <ActivityIndicator size={'large'} color={colors.gray} style={{marginTop: 20}}/> :
                     <View style={{flex: 1}}>
                         <Image
-                            blurRadius={1}
-                            uri={this.props.movies.movieDetail.Poster}
+                            blurRadius={2}
+                            source={{uri: this.props.movies.movieDetail.Poster}}
                             style={styles.posterBack}/>
                         <PosterImage
                             uri={this.props.movies.movieDetail.Poster}
                             style={styles.poster}/>
                         <View style={styles.topContainer}>
-                            <Text style={styles.detailText}>{'Year: ' + this.props.movies.movieDetail.Year}</Text>
-                            <Text style={styles.detailText}>{'Genre: ' + this.props.movies.movieDetail.Genre}</Text>
-                            <Text
-                                style={styles.detailText}>{'Language: ' + this.props.movies.movieDetail.Language}</Text>
+                            <Text style={styles.dataText}>{'Year: ' + this.props.movies.movieDetail.Year}</Text>
+
+                            <Text style={styles.dataText}>
+                                {'Language: ' + this.props.movies.movieDetail.Language}</Text>
                         </View>
                         <View style={styles.centerContainer}>
                             <Text style={styles.titleText}>{this.props.movies.movieDetail.Title}</Text>
                             <Text style={styles.detailText}>{this.props.movies.movieDetail.Plot}</Text>
                         </View>
                         <View style={styles.bottomContainer}>
+                            <Text style={styles.detailText}>{'Genre: ' + this.props.movies.movieDetail.Genre}</Text>
                             <Text
                                 style={styles.detailText}>{'Director: ' + this.props.movies.movieDetail.Director}</Text>
                             <Text style={styles.detailText}>{'Actors: ' + this.props.movies.movieDetail.Actors}</Text>
@@ -71,9 +72,19 @@ const styles = StyleSheet.create({
     bottomContainer: {
         margin: 5,
         borderWidth: 1,
-        borderColor: colors.lightGrey,
+        borderColor: colors.gray,
         borderRadius: 5,
         padding: 5,
+        backgroundColor: colors.lightGrey
+    },
+    dataText: {
+        fontSize: 12,
+        color: colors.textSmallColor,
+        marginTop: 5,
+        borderWidth: 1,
+        borderColor: colors.lightGrey,
+        padding: 3,
+        borderRadius: 3
     },
     titleText: {
         fontSize: 14,

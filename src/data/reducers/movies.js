@@ -21,6 +21,14 @@ export default (state = initialState, action) => {
             return {...state, moviesList_loading: false, ...response};
         case Types.SEARCH_MOVIES_FAILED:
             return {...state, moviesList_loading: false, ...response};
+        case Types.SEARCH_MOVIES_RESET:
+            return {
+                ...state,
+                moviesList: [],
+                moviesList_loading: false,
+                moviesList_has_next_page: false,
+                moviesList_next_page: 1,
+            };
 
         case Types.DETAIL_MOVIE_REQUEST:
             return {...state, movieDetail_loading: true, ...response};

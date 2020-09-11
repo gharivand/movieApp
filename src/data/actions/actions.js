@@ -9,6 +9,10 @@ const remote = apiClient();
 
 function requestSearchMovie(title, page) {
     return (dispatch) => {
+        if (title === '') {
+            dispatch({type: Types.SEARCH_MOVIES_RESET});
+            return;
+        }
         dispatch({type: Types.SEARCH_MOVIES_REQUEST});
         let moviesList = store.getState().movies.moviesList;
         remote.get('', {

@@ -41,7 +41,7 @@ const SearchBar = ({value, onChangeText, onClearText, backStyle, placeHolder}) =
 const styles = StyleSheet.create({
     container: {
         width: Dimensions.get('screen').width - 20,
-        height: 40,
+        height: 45,
         flexDirection: 'row-reverse',
         justifyContent: 'space-between',
         alignItems: 'center',

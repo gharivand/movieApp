@@ -4,6 +4,7 @@ import {
     View,
     TouchableOpacity,
     Dimensions,
+    Text,
 } from 'react-native';
 import {colors} from '../assets/theme';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -13,6 +14,7 @@ const Header = ({back, children}) => {
     return (
         <View style={styles.container}>
             {children}
+            <Text style={styles.appName}>{'IMDB'}</Text>
             {back ?
                 <TouchableOpacity activeOpacity={0.8} style={styles.buttonStyle} onPress={() => Actions.pop()}>
                     <Icon name='md-arrow-back' color={colors.black} size={22}/>
@@ -37,6 +39,14 @@ const styles = StyleSheet.create({
         height: 40,
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    appName: {
+        position: 'absolute',
+        textAlign: 'center',
+        left: 0,
+        right: 0,
+        alignSelf: 'center',
+        color: colors.textColor,
     },
 });
 

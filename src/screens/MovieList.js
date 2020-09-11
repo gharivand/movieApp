@@ -15,10 +15,6 @@ class MovieList extends Component {
         this.searchTimeout = null;
     }
 
-    componentDidMount() {
-        this.search_movie('bat');
-    }
-
     search_movie(title) {
         this.setState({searchField: title});
         if (this.state.typingTimeout) {
